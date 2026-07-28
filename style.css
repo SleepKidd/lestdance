@@ -65,7 +65,6 @@ body {
     z-index: -1;
     pointer-events: none;
 }
-
 /* --- НАВИГАЦИЯ И ШАПКА --- */
 .navbar {
     position: fixed;
@@ -141,6 +140,7 @@ body {
     box-shadow: 0 0 25px rgba(223, 183, 108, 0.3);
     transform: translateY(-2px);
 }
+
 /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
 .hero {
     height: 100vh;
@@ -238,7 +238,6 @@ body {
     30% { opacity: 1; }
     100% { opacity: 0; top: 18px; }
 }
-
 /* --- ОБЩИЙ КОНТЕЙНЕР И ЗАГОЛОВКИ СЕКЦИЙ --- */
 .container {
     max-width: 1200px;
@@ -327,6 +326,7 @@ body {
     font-size: 0.9rem;
     color: var(--text-muted);
 }
+
 /* --- СЕТКА УСЛУГ (GLASS CARDS) --- */
 .center-title {
     text-align: center;
@@ -393,8 +393,114 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+/* --- БЛОК ХОРЕОГРАФОВ --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+}
+.team-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.02);
+    transition: var(--transition);
+    overflow: hidden;
+}
+.team-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(223, 183, 108, 0.2);
+}
+.team-avatar {
+    height: 300px;
+    background: linear-gradient(180deg, #161616 0%, #111111 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.team-placeholder-icon {
+    font-size: 4rem;
+    color: rgba(223, 183, 108, 0.15);
+}
+.team-info {
+    padding: 30px;
+}
+.team-info h3 {
+    font-family: var(--font-accent);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+.team-role {
+    color: var(--gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.team-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
 
-/* --- КОНТАКТЫ И ФУТЕР --- */
+/* --- АККОРДЕОН FAQ --- */
+.faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.03);
+    overflow: hidden;
+    transition: var(--transition);
+}
+.faq-question {
+    padding: 24px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 1.05rem;
+    user-select: none;
+}
+.faq-icon {
+    color: var(--gold);
+    transition: transform 0.4s ease;
+    font-size: 0.9rem;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    padding: 0 30px;
+}
+.faq-answer p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    padding-bottom: 24px;
+    font-weight: 300;
+}
+
+/* Состояния при активации FAQ через JS */
+.faq-item.active {
+    border-color: rgba(223, 183, 108, 0.2);
+}
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    transition: max-height 0.5s cubic-bezier(0.99, 0.01, 0.45, 1);
+}
+/* --- КОНТАКТЫ --- */
 .contacts-box {
     background: linear-gradient(135deg, rgba(20,20,20,0.8) 0%, rgba(10,10,10,0.9) 100%);
     border: 1px solid rgba(223, 183, 108, 0.12);
@@ -451,12 +557,29 @@ body {
     padding-right: 50px;
 }
 
+/* --- ФУТЕР И КОПИРАЙТ СОЗДАТЕЛЯ --- */
 .footer {
     text-align: center;
     padding: 40px 0;
     border-top: 1px solid rgba(255,255,255,0.03);
     color: #555555;
     font-size: 0.85rem;
+}
+.creator-credits {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+.creator-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
+}
+.creator-link:hover {
+    color: var(--gold-bright);
+    text-shadow: 0 0 10px rgba(223, 183, 108, 0.4);
 }
 
 /* --- СКРОЛЛ-АНИМАЦИИ (JS REVEAL) --- */
@@ -479,7 +602,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .nav-menu { display: none; } /* Скрытие меню для ультра-минимализма на телефонах */
+    .nav-menu { display: none; } /* Минимализм для мобильных экранов */
     .hero-title { font-size: 2.6rem; }
     .hero-btns { flex-direction: column; }
     .container { padding: 70px 20px; }
