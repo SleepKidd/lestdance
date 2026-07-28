@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Иконки -->
+    <!-- Иконки FontAwesome -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <!-- Стили -->
     <link rel="stylesheet" href="style.css">
@@ -30,12 +30,13 @@
             <nav class="nav-menu">
                 <a href="#about" class="nav-link">О студии</a>
                 <a href="#services" class="nav-link">Направления</a>
+                <a href="#team" class="nav-link">Команда</a>
+                <a href="#faq" class="nav-link">FAQ</a>
                 <a href="#contacts" class="nav-link">Контакты</a>
             </nav>
             <a href="https://t.me" target="_blank" class="cta-btn-nav">Записаться</a>
         </div>
     </header>
-
     <!-- Главный экран (Hero) -->
     <section class="hero">
         <div class="hero-overlay"></div>
@@ -84,7 +85,6 @@
             </div>
         </div>
     </section>
-
     <!-- Услуги и направления -->
     <section id="services" class="services reveal">
         <div class="container">
@@ -99,28 +99,103 @@
                     <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
                     <h3>High Heels</h3>
                     <p>Элегантность, дерзость и невероятная уверенность на каблуках. Раскройте свою женственность.</p>
-                    <span class="card-price">От 5 000 ₽ / занятье</span>
+                    <span class="card-price">От 5 000 ₽ / занятие</span>
                 </div>
                 <!-- Карта 2 -->
                 <div class="service-card">
                     <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
                     <h3>Contemporary</h3>
                     <p>Глубокая чувственность, баланс и свобода самовыражения через современную пластику.</p>
-                    <span class="card-price">От 4 500 ₽ / занятье</span>
+                    <span class="card-price">От 4 500 ₽ / занятие</span>
                 </div>
                 <!-- Карта 3 -->
                 <div class="service-card">
                     <div class="card-icon"><i class="fa-solid fa-fire"></i></div>
                     <h3>Jazz Funk</h3>
                     <p>Энергия, стиль и самые трендовые связки под современные мировые поп-хиты.</p>
-                    <span class="card-price">От 4 500 ₽ / занятье</span>
+                    <span class="card-price">От 4 500 ₽ / занятие</span>
                 </div>
                 <!-- Карта 4 -->
                 <div class="service-card">
                     <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
                     <h3>VIP Индивидуально</h3>
                     <p>Персональный разбор техники, адаптивный график и постановка вашего личного шоу.</p>
-                    <span class="card-price">От 12 000 ₽ / занятье</span>
+                    <span class="card-price">От 12 000 ₽ / занятие</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преподаватели студии -->
+    <section id="team" class="team reveal">
+        <div class="container">
+            <div class="center-title">
+                <span class="section-badge">Команда</span>
+                <h2 class="section-title">Наши <span class="gold-text">Хореографы</span></h2>
+            </div>
+            <div class="team-grid">
+                <!-- Преподаватель 1 -->
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fa-solid fa-user-tie team-placeholder-icon"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Кристина Вернер</h3>
+                        <p class="team-role">High Heels & Jazz Funk</p>
+                        <p class="team-desc">7 лет опыта в топ-проектах. Стажировалась в Лос-Анджелесе. Создает неповторимый стиль дерзости и грации.</p>
+                    </div>
+                </div>
+                <!-- Преподаватель 2 -->
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fa-solid fa-user-tie team-placeholder-icon"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Александр Громов</h3>
+                        <p class="team-role">Contemporary</p>
+                        <p class="team-desc">Солист современного балета. Мастер глубокой пластики и передачи эмоций через свободное движение.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Частые вопросы (FAQ) -->
+    <section id="faq" class="faq reveal">
+        <div class="container">
+            <div class="center-title">
+                <span class="section-badge">Вопросы</span>
+                <h2 class="section-title">Часто <span class="gold-text">Задают</span></h2>
+            </div>
+            <div class="faq-wrapper">
+                <!-- Вопрос 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Можно ли прийти без опыта в танцах?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Абсолютно. Более 70% наших клиентов начинают с нуля. Хореографы адаптируют нагрузку и пошагово объясняют каждое движение.</p>
+                    </div>
+                </div>
+                <!-- Вопрос 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Какая форма одежды требуется для занятий?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Для High Heels понадобятся удобные каблуки (желательно хилсы) и облегающая одежда. Для Contemporary и Jazz Funk — свободная спортивная форма и носки/кроссовки.</p>
+                    </div>
+                </div>
+                <!-- Вопрос 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Нужно ли бронировать VIP-занятие заранее?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, индивидуальные сессии с хореографами планируются заранее. Рекомендуем оставлять заявку в Telegram минимум за 2-3 дня.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -159,9 +234,10 @@
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- Футер с копирайтом создателя -->
     <footer class="footer">
-        <p>&copy; 2026 Let's Dance. Все права защищены. Создано со вкусом.</p>
+        <p>&copy; 2026 Let's Dance. Все права защищены.</p>
+        <p class="creator-credits">Created by <a href="https://sleepkidd.ru" target="_blank" class="creator-link">sleepkidd.ru</a></p>
     </footer>
 
     <!-- Скрипты -->
