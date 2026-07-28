@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Прелоадер: плавно убираем экран загрузки
+    // 1. Прелоадер: плавно скрываем экран загрузки после полной сборки страницы
     const preloader = document.getElementById("preloader");
     window.addEventListener("load", () => {
         setTimeout(() => {
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500);
     });
 
-    // 2. Шапка: добавляем плотность фона при прокрутке страницы
+    // 2. Шапка: плавно меняем прозрачность и высоту навигации при скролле
     const navbar = document.querySelector(".navbar");
     window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 3. Анимация появления блоков при скролле (Scroll Reveal)
+    // 3. Эффект проявления блоков: запускаем красивую анимацию появления при прокрутке
     const revealElements = document.querySelectorAll(".reveal");
     
     const checkReveal = () => {
@@ -40,5 +40,24 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     window.addEventListener("scroll", checkReveal);
-    checkReveal(); // Запуск проверки сразу при загрузке
+    checkReveal(); // Проверяем блоки сразу при старте страницы
+
+    // 4. Логика аккордеона FAQ: плавное открытие вкладок по клику
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+        const question = item.querySelector(".faq-question");
+        
+        question.addEventListener("click", () => {
+            const isOpen = item.classList.contains("active");
+            
+            // Схлопываем остальные вкладки, чтобы интерфейс оставался аккуратным
+            faqItems.forEach(i => i.classList.remove("active"));
+            
+            // Если кликнули на закрытую вкладку — открываем её
+            if (!isOpen) {
+                item.classList.add("active");
+            }
+        });
+    });
 });
